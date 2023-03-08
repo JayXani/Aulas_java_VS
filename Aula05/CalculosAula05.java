@@ -1,8 +1,8 @@
 import javax.swing.JOptionPane;
 
-public class CalculosAula05 implements InterfaceAula05{
 
-    @Override
+public class CalculosAula05{
+
     public void fatorialWhile(){
         int getValorFatorial = 0;
         int contador;
@@ -18,7 +18,6 @@ public class CalculosAula05 implements InterfaceAula05{
         JOptionPane.showMessageDialog(null, "O fatorial eh: " + getValorFatorial);
     }
 
-    @Override
     public void fatorialFor(){
         int getValorFatorial = 0;
         int contador;
@@ -36,4 +35,12 @@ public class CalculosAula05 implements InterfaceAula05{
         JOptionPane.showMessageDialog(null, "O fatorial eh: " + getValorFatorial);
 
     }
+    public static int fibonnaciRecursiva(int termo){
+        if(termo == 0 || termo == 1){
+            return termo;
+        }
+        return fibonnaciRecursiva(termo - 1) + fibonnaciRecursiva(termo - 2);
+    }
+
+    
 }

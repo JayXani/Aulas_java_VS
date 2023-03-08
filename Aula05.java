@@ -92,9 +92,16 @@ public class Aula05{
             System.out.println(proximo);
             anterior = atual;
             atual = proximo;
-        }
-        
+        }   
     }
+
+    private static int fibonnaciRecursiva(int termo){
+        if(termo == 0 || termo == 1){
+            return termo;
+        }
+        return fibonnaciRecursiva(termo - 1) + fibonnaciRecursiva(termo - 2);
+    }
+
 
     public static void main (String[] args){
 
@@ -102,7 +109,8 @@ public class Aula05{
         + "\n A)Calculo fatorial (while)"
         + "\n B)Calculo fatorial (for)"
         + "\n C)Calculo fibonnaci (while)"
-        + "\n D)Calculo fibonnaci (for) \n\n ";
+        + "\n D)Calculo fibonnaci (for)"
+        + "\n E)Calculo fibonnaci (Recursiva) \n\n ";
         
         String valor = null;
         
@@ -127,6 +135,19 @@ public class Aula05{
 
             case "D","d":
                 fibonNacciFor();
+                break;
+
+            case "E","e":
+
+                int termo;
+                System.out.println("Informe o termo: ");
+                termo = Aula05.teclado.nextInt();
+                System.out.println("\n");
+
+                for(int i = 1; i <= termo; i++){
+
+                    System.out.println(fibonnaciRecursiva(i));
+                }
                 break;
 
             default:

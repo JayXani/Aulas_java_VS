@@ -21,7 +21,14 @@ public class Aula05Main extends CalculosAula05{
                 Aula05Main.Intermedio.fatorialFor();
                 break;
             case 3:
-                
+                int termo;
+
+                termo = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe o termo desejado, sendo maior que 0: "));
+
+                for(int i = 1; i <= termo; i++){
+                    Aula05Main.Intermedio.fibonnaciRecursiva(i);
+                }
+                break;
             default:
                 break;
         }
