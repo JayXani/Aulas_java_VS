@@ -9,7 +9,7 @@ public class Aula05Main extends CalculosAula05{
         + "\n 1) Calculo fatorial (while)"
         + "\n 2) Calculo fatorial (for)"
         + "\n 3) Calculo fibonnaci (while)"
-        + "\n 4) Calculo fibonnaci (for) \n\n ";
+        + "\n 4) Calculo fatRecur \n\n ";
 
         int condicao = Integer.parseInt(JOptionPane.showInputDialog(null, "Selecione a opção desejada:" + menu));
         
@@ -17,18 +17,24 @@ public class Aula05Main extends CalculosAula05{
             case 1:
                 Aula05Main.Intermedio.fatorialWhile();
                 break;
+
             case 2: 
                 Aula05Main.Intermedio.fatorialFor();
                 break;
+
             case 3:
                 int termo;
+                termo = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe o termo desejado, sendo maior que 0: "));                
+                fibonnaciRecursiva(1,1,0,termo);
 
-                termo = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe o termo desejado, sendo maior que 0: "));
-
-                for(int i = 1; i <= termo; i++){
-                    Aula05Main.Intermedio.fibonnaciRecursiva(i);
-                }
                 break;
+            case 4: 
+            int num;
+            num = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe o valor para calculo: "));
+            System.out.println(fatorialRecursiva(num));
+        
+                break;
+
             default:
                 break;
         }

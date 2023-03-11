@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 
-public class CalculosAula05{
+public  class CalculosAula05{
 
     public void fatorialWhile(){
         int getValorFatorial = 0;
@@ -35,12 +35,24 @@ public class CalculosAula05{
         JOptionPane.showMessageDialog(null, "O fatorial eh: " + getValorFatorial);
 
     }
-    public static int fibonnaciRecursiva(int termo){
-        if(termo == 0 || termo == 1){
-            return termo;
+    public static void fibonnaciRecursiva(int anterior, int atual, int condicao, int termo){
+        if(condicao == 2){
+            System.out.println(anterior);
+            System.out.println(atual);
         }
-        return fibonnaciRecursiva(termo - 1) + fibonnaciRecursiva(termo - 2);
-    }
 
-    
+        if(termo == condicao){
+            return;
+        }
+        System.out.println(anterior + atual);
+
+        fibonnaciRecursiva(atual, anterior + atual, condicao + 1, termo);
+    }
+    public static int fatorialRecursiva(int n){
+        int fat = n;
+        if(n <= 0){
+            return 0;
+        }
+        return fatorialRecursiva(fat * (n-1));
+    }
 }
